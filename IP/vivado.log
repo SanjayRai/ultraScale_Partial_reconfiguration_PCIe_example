@@ -1,0 +1,49 @@
+#-----------------------------------------------------------
+# Vivado v2016.1 (64-bit)
+# SW Build 1538259 on Fri Apr  8 15:45:23 MDT 2016
+# IP Build 1537824 on Fri Apr  8 04:28:57 MDT 2016
+# Start of session at: Thu May 26 21:10:22 2016
+# Process ID: 15709
+# Current directory: /home/sanjayr/projects/Vivado_PR/PR_pcie_axi_bridge/test3_multi_PRM_DDR4_pcie_accl_dsn/IP
+# Command line: vivado -source vivado_project.tcl
+# Log file: /home/sanjayr/projects/Vivado_PR/PR_pcie_axi_bridge/test3_multi_PRM_DDR4_pcie_accl_dsn/IP/vivado.log
+# Journal file: /home/sanjayr/projects/Vivado_PR/PR_pcie_axi_bridge/test3_multi_PRM_DDR4_pcie_accl_dsn/IP/vivado.jou
+#-----------------------------------------------------------
+start_gui
+source vivado_project.tcl
+# source ../device_type.tcl
+## proc DEVICE_TYPE {} {
+##     return xcku040-ffva1156-2-e
+## }
+## proc HW_DEBUGGER {} {
+## open_hw
+## connect_hw_server -url mcmicro:3121
+## current_hw_target [get_hw_targets */xilinx_tcf/Digilent/210251893419]
+## set_property PARAM.FREQUENCY 15000000 [get_hw_targets */xilinx_tcf/Digilent/210251893419]
+## open_hw_target
+## current_hw_device [lindex [get_hw_devices] 0]
+## refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+## }
+# create_project project_X project_X -part [DEVICE_TYPE] 
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/applications/Xilinx/Vivado/2016.1/data/ip'.
+# add_files -fileset sources_1 -norecurse {
+# ../IP/axi_bram_ctrl_0/axi_bram_ctrl_0.xci
+# ../IP/pcie_gen3x8_brige_ip/pcie_gen3x8_brige_ip.xci
+# }
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+add_files -norecurse /home/sanjayr/projects/Vivado_PR/PR_pcie_axi_bridge/test3_multi_PRM_DDR4_pcie_accl_dsn/IP/bd/axi_ddr_kcu105/axi_ddr_kcu105.bd
+export_ip_user_files -of_objects  [get_files  /home/sanjayr/projects/Vivado_PR/PR_pcie_axi_bridge/test3_multi_PRM_DDR4_pcie_accl_dsn/IP/bd/axi_ddr_kcu105/axi_ddr_kcu105.bd] -force -quiet
+update_compile_order -fileset sources_1
+open_bd_design {/home/sanjayr/projects/Vivado_PR/PR_pcie_axi_bridge/test3_multi_PRM_DDR4_pcie_accl_dsn/IP/bd/axi_ddr_kcu105/axi_ddr_kcu105.bd}
+Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - proc_sys_reset_0
+Adding cell -- xilinx.com:ip:ddr4:2.0 - ddr4_0
+Adding cell -- xilinx.com:ip:axi_dwidth_converter:2.1 - auto_us
+Adding cell -- xilinx.com:ip:axi_clock_converter:2.1 - auto_cc
+Successfully read diagram <axi_ddr_kcu105> from BD file </home/sanjayr/projects/Vivado_PR/PR_pcie_axi_bridge/test3_multi_PRM_DDR4_pcie_accl_dsn/IP/bd/axi_ddr_kcu105/axi_ddr_kcu105.bd>
+INFO: [Device 21-403] Loading part xcku040-ffva1156-2-e
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu May 26 21:12:24 2016...

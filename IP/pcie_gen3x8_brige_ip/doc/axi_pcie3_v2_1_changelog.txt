@@ -1,0 +1,121 @@
+2016.1:
+ * Version 2.1
+ * Added Tandem and MCAP support for Ultrascale configuration of the core.
+ * Modified the width of pipe_tx_*_sigs, common_commands_in and common_commands_out
+ * Modified the mapping of logical and physical external pipe interface ports for EP configurations so that it can be connected to Root Port instance directly
+ * Changes to HDL library management to support Vivado IP simulation library
+ * Fixed issue with the default values of 'Base Class Menu' and 'Sub Class Interface Menu'
+ * Added support for defense grade kintexu devices - xqku040-rfa1156,xqku040-rba676,xqku060-rfa1156 and xqku095-rfa1156
+ * Added port msix_entry_num input for future use of internal MSI-X table implementation; currently it is always disabled
+ * Port width for s_axi_ctl_awaddr and s_axi_ctl_araddr is changed depending on device port type selection. EP is limited to 4K and RP is limited to 256M
+ * Added axi_ctl_aresetn output signal to allow access to S_AXI_CTL interface when there's no link-up
+ * pcie3_cfg_msix interface is accessible only when external MSI-X table implementation is selected; currently only external implementation is supported
+ * Added the required Tandem and MCAP ports: cap_*, startup_*, mcap_*
+ * Added HAS_BURST parameter on M_AXI interfaces for SmartConnect optimization
+ * Added two new ports to transceiver debug interface section: gt_dmonfiforeset gt_dmonitorclk.
+ * Revision change in one or more subcores
+
+2015.4.2:
+ * Version 2.0 (Rev. 1)
+ * No changes
+
+2015.4.1:
+ * Version 2.0 (Rev. 1)
+ * No changes
+
+2015.4:
+ * Version 2.0 (Rev. 1)
+ * Added support for ffva1156 package for xcku095 device
+
+2015.3:
+ * Version 2.0
+ * Added support for Shared Logic
+ * Added support for Root Port configuration
+ * Added support for sfva784 package for xcku035 and xcku040
+ * Added support for xcku025, xcku085 and xcku095 devices
+ * For EXTERNAL PIPE INTERFACE mode, a new file xil_sig2pipe.v is delivered in the simulation directory and it replaces the phy_sig_gen.v. BFM/VIP's should interface with the xil_sig2pipe instance in board.v
+ * IP revision number added to HDL module, library, and include file names, to support designs with both locked and upgraded IP instances
+
+2015.2.1:
+ * Version 1.1 (Rev. 1)
+ * No changes
+
+2015.2:
+ * Version 1.1 (Rev. 1)
+ * Added Clock interface for the signal ext_ch_gt_drpclk
+ * Fixed issue with the location constraints for refclk_ibuf for xcvu095-ffvc2104, xcvu125-flvc2104 and xcvu190-flga2577
+ * Added MSIX Interface at the core boundary
+ * Added support for xq7vx690t-rf1158 device and package
+ * Fixed issue with outgoing packet's Tag management
+
+2015.1:
+ * Version 1.1
+ * Added non-default ports ext_ch_gt_drp_addr, ext_ch_gt_drp_en, ext_ch_gt_drp_di, ext_ch_gt_drp_do, ext_ch_gt_drp_rdy, ext_ch_gt_drp_we and ext_ch_gt_drpclk to access the GT DRP ports for debugging purpose as per the requirement. These ports and interface are enabled using the model parameter EXT_CH_GT_DRP.
+ * Added Transceiver debug and status ports as a part of EOU item
+ * Added support for new packages: flvb1760,ffvd1517,ffvc1517,flva2104,flvd1517 and flvb2104
+ * Fixed issue with MRd transaction during linkdown (Xilinx Answer 63113)
+ * Added support for GUI option to select PLL_TYPE for Gen2 Speed: CPLL (Optional) and QPLL1 (Default)
+ * Added support for GUI option to select CORE_CLK_FREQ for Gen3 x1/x2/x4: 250 MHz (Default) and 500 MHz (Optional)
+ * Added PCIe specific production settings for VU095-ES2
+ * Removed support for 250 MHz user clock and axis clock for -1/-1L/-1LV speedgrades
+ * Removed GUI Parameter prefetch enable for BAR1, BAR3 and BAR5
+
+2014.4.1:
+ * Version 1.0 (Rev. 1)
+ * No changes
+
+2014.4:
+ * Version 1.0 (Rev. 1)
+ * Fix to properly pass the PCIe subsystem_vendor_id and subsystem_id to the PCIe hardblock.
+ * Encrypted source files are concatenated together to reduce the number of files and to reduce simulator compile time
+ * Added support for Ultrascale KintexU and VirtexU devices
+
+2014.3:
+ * Version 1.0
+ * Initial release
+
+(c) Copyright 2014 - 2016 Xilinx, Inc. All rights reserved.
+
+This file contains confidential and proprietary information
+of Xilinx, Inc. and is protected under U.S. and
+international copyright and other intellectual property
+laws.
+
+DISCLAIMER
+This disclaimer is not a license and does not grant any
+rights to the materials distributed herewith. Except as
+otherwise provided in a valid license issued to you by
+Xilinx, and to the maximum extent permitted by applicable
+law: (1) THESE MATERIALS ARE MADE AVAILABLE "AS IS" AND
+WITH ALL FAULTS, AND XILINX HEREBY DISCLAIMS ALL WARRANTIES
+AND CONDITIONS, EXPRESS, IMPLIED, OR STATUTORY, INCLUDING
+BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, NON-
+INFRINGEMENT, OR FITNESS FOR ANY PARTICULAR PURPOSE; and
+(2) Xilinx shall not be liable (whether in contract or tort,
+including negligence, or under any other theory of
+liability) for any loss or damage of any kind or nature
+related to, arising under or in connection with these
+materials, including for any direct, or any indirect,
+special, incidental, or consequential loss or damage
+(including loss of data, profits, goodwill, or any type of
+loss or damage suffered as a result of any action brought
+by a third party) even if such damage or loss was
+reasonably foreseeable or Xilinx had been advised of the
+possibility of the same.
+
+CRITICAL APPLICATIONS
+Xilinx products are not designed or intended to be fail-
+safe, or for use in any application requiring fail-safe
+performance, such as life-support or safety devices or
+systems, Class III medical devices, nuclear facilities,
+applications related to the deployment of airbags, or any
+other applications that could lead to death, personal
+injury, or severe property or environmental damage
+(individually and collectively, "Critical
+Applications"). Customer assumes the sole risk and
+liability of any use of Xilinx products in Critical
+Applications, subject only to applicable laws and
+regulations governing limitations on product liability.
+
+THIS COPYRIGHT NOTICE AND DISCLAIMER MUST BE RETAINED AS
+PART OF THIS FILE AT ALL TIMES.
