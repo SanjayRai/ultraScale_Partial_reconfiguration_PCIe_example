@@ -18,8 +18,13 @@ read_verilog {
 }
 
 read_xdc {
-../../../PR_modules.xdc
+../../../xdc/PR_modules.xdc
 }
+
+# ../../../xdc/PR_modules_A_ooc_budget.xdc
+# ../../../xdc/PR_modules_A_ooc_optimize.xdc
+# ../../../xdc/PR_modules_A_ooc_timing.xdc
+# ../../../xdc/PR_modules_A_phys.xdc
 
 set_property verilog_define XSDB_SLV_DIS [current_fileset]
 synth_design -top $TOP_module -part [DEVICE_TYPE] -mode out_of_context 
